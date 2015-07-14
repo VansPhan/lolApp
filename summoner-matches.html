@@ -4,10 +4,12 @@
 			<h4 class="item">{{ game.gameMode }} {{ game.gameType }} {{ game.subType }}</h4>
 		</div>
 		<div class="panel-body">
-			<img ng-src="images/{{ game.championId }}.png" alt="{{ game.championId }}" class="item" />
+			<img ng-src="img/champion/{{ game.championId }}.png" alt="{{ game.championId }}" class="item" />
 			<p class="item">
 			<b>Game Date: </b>{{ game.createDate | date }} </br>
 			<b>IP Earned: </b>{{ game.ipEarned }} </br>
+			<img ng-src="img/spell/{{ game.spell1 }}.png" class="img-rounded" alt="{{ game.spell1 }}" />
+			<img ng-src="img/spell/{{ game.spell2 }}.png" class="img-rounded" alt="{{ game.spell2 }}" />
 
 			</p>
 		</div>
