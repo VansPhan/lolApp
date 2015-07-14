@@ -18,7 +18,6 @@ app.controller('apiController', ['$http', '$scope', function($http, $scope){
 			//Edits the api link with the new name
 				link = 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/' + $scope.username.name + '?api_key=d4095fd1-ec30-4403-8db7-fdacebef9b17';
 				$http.get(link).success(function(data){
-					console.log(data);
 			//If successful, put data into user property
 				angular.forEach(data, function (val, key){
 					$scope.user = val;
@@ -45,9 +44,26 @@ app.controller('apiController', ['$http', '$scope', function($http, $scope){
 			});
 			link = 'https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/' + userid + '/recent?api_key=d4095fd1-ec30-4403-8db7-fdacebef9b17';
 			$http.get(link).success(function(data){
-				$scope.games = data;
+				$scope.games = getSummonerIcons(data);
 			});
 
+		};
+
+		var getSummonerIcons = function (dataFromMatches) {
+			var link = 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/summoner-spell?dataById=true&api_key=d4095fd1-ec30-4403-8db7-fdacebef9b17';
+			var iconApi;
+			$http.get(link).success(function(data){ 
+				iconApi = data;
+				angular.forEach(dataFromMatches, function(val, key) {
+				for (var i = 0; i < val.length; i++) {
+					switch (val[i].spell1) {
+						case 1: 
+
+					};
+				};
+				// iconApi.data[1].name
+			});
+			});
 		};
 		
 	}]);
