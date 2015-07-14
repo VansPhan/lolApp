@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="lolApp">
+<head>
+	<title>lolApp</title>
+	<!-- AngularJS -->
+	<script src="angular/angular.min.js"></script>
+	<!-- Javascript -->
+	<script src="js/app.js"></script>
+	<script src="js/lolApp-directives.js"></script>
+	<script src="js/apicontroller.js"></script>
+	<script src="js/recentGamesCntrl.js"></script>
+	
+	
+</head>
+<body>
+<div class="basicInfo" ng-controller="apiController as api">
+	<form ng-submit="api.submit()">
+  		<input type="text" ng-model="username.name" placeholder="Summoner's name"></input></br>
+ 		<input type="submit" id="submit" value="Submit"></input>
+	</form>
+
+	<summonerdescription></summonerdescription>
+
+	<div class="recentGames">
+		<div class="display" ng-repeat="game in games.games">
+			<h3>{{ game.gameMode }} {{ game.gameType }} {{ game.subType }}</h3>
+			<p><b>Champion: </b>{{ game.championId }}</p>
+			<p><b>Game Date: </b>{{ game.createDate | date }}</p>
+		</div>
+	</div>
+	
+</div>
+
+
+
+
+</body>
+</html>
