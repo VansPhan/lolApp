@@ -1,8 +1,12 @@
 	<div class="recentGames">
-		<div class="display" ng-repeat="game in games.games">
-			<h3>{{ game.gameMode }} {{ game.gameType }} {{ game.subType }}</h3>
-			<img ng-src="images/{{ game.championId }}.png" alt="{{ game.championId }}" />
-			<p><b>Game Date: </b>{{ game.createDate | date }}</p>
+		<div ng-repeat="game in games.games" class="history">
+		<div class="panel-title">
+			<h4 class="item">{{ game.gameMode }} {{ game.gameType }} {{ game.subType }}</h4>
+		</div>
+		<div class="panel-body">
+			<img ng-src="images/{{ game.championId }}.png" alt="{{ game.championId }}" class="item" />
+			<p class="item"><b>Game Date: </b>{{ game.createDate | date }}</p>
+		</div>
 
 		</div>
 	</div>
