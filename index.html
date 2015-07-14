@@ -9,14 +9,16 @@
 	<script src="js/lolApp-directives.js"></script>
 	<script src="js/apicontroller.js"></script>
 	<script src="js/recentGamesCntrl.js"></script>
-	
-	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div class="basicInfo" ng-controller="apiController as api">
 	<form ng-submit="api.submit()">
-  		<input type="text" ng-model="username.name" placeholder="Summoner's name"></input></br>
- 		<input type="submit" id="submit" value="Submit"></input>
+  		<input type="text" ng-model="username.name" class="form-control" placeholder="Summoner's name"></input></br>
+ 		<input type="submit" class="btn btn-primary btn-lg" id="submit" value="Submit"></input>
 	</form>
 
 	<summonerdescription></summonerdescription>

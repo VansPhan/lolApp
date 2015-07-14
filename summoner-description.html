@@ -1,9 +1,8 @@
 <div class="display">
 	<h3>{{ user.name }}</h3>
 	<p>
-		<b>Summoner's ID: </b>{{ user.id }} </br>
-		<b>Level: </b>{{ user.summonerLevel }} </br>
-		<b>Icon: </b>{{ user.profileIconId }} </br>
+		<span><b ng-show="user.summonerLevel">Level: </b>{{ user.summonerLevel }} </span></br>
+		<img ng-src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/{{ user.profileIconId }}.png " alt="{{ user.profileIconId }}" />
 	</p>
 </div>
 	

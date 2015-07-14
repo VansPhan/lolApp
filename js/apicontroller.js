@@ -1,4 +1,7 @@
 app.controller('apiController', ['$http', '$scope', function($http, $scope){
+
+	var cdn = $http.get('https://global.api.pvp.net/api/lol/static-data/na/v1.2/realm?api_key=d4095fd1-ec30-4403-8db7-fdacebef9b17');
+	cdn;
 	//default summoner is Van for now
 	var link = 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/van?api_key=d4095fd1-ec30-4403-8db7-fdacebef9b17';
 	//Will use user property to serve data onto html
@@ -15,6 +18,7 @@ app.controller('apiController', ['$http', '$scope', function($http, $scope){
 			//Edits the api link with the new name
 				link = 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/' + $scope.username.name + '?api_key=d4095fd1-ec30-4403-8db7-fdacebef9b17';
 				$http.get(link).success(function(data){
+					console.log(data);
 			//If successful, put data into user property
 				angular.forEach(data, function (val, key){
 					$scope.user = val;
@@ -46,13 +50,4 @@ app.controller('apiController', ['$http', '$scope', function($http, $scope){
 
 		};
 		
-	//Initialize on startup
-		$http.get(link).success(function(data){
-			var init;
-			angular.forEach(data, function (val, key){
-				init = val;
-			})
-
-			$scope.user = init;
-		});
 	}]);
