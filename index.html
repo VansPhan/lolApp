@@ -21,13 +21,7 @@
 
 	<summonerdescription></summonerdescription>
 
-	<div class="recentGames">
-		<div class="display" ng-repeat="game in games.games">
-			<h3>{{ game.gameMode }} {{ game.gameType }} {{ game.subType }}</h3>
-			<p><b>Champion: </b>{{ game.championId }}</p>
-			<p><b>Game Date: </b>{{ game.createDate | date }}</p>
-		</div>
-	</div>
+	<summonermatches></summonermatches>
 	
 </div>
 

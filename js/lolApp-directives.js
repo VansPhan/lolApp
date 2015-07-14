@@ -6,4 +6,11 @@
     restrict: 'E',
     templateUrl: 'summoner-description.html'
   };
-  });
+});
+
+  app.directive('summonermatches', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'summoner-matches.html'
+  };
+});
