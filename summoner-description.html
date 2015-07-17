@@ -1,9 +1,8 @@
-<div class="display">
-	<h3>{{ user.name }}</h3>
+<div class="user">
+<h2>{{ user.name }}</h2>
 	<p>
-		<b>Summoner's ID: </b>{{ user.id }} </br>
-		<b>Level: </b>{{ user.summonerLevel }} </br>
-		<b>Icon: </b>{{ user.profileIconId }} </br>
+		<span><b ng-show="user.summonerLevel">Level: </b>{{ user.summonerLevel }} </span></br>
+		<img ng-src="img/profileicon/{{ user.profileIconId }}.png " class="img-rounded" alt="{{ user.profileIconId }}" />
 	</p>
 </div>
 	

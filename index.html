@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="lolApp">
+<html ng-app="lolApp" lang="en-US">
 <head>
 	<title>lolApp</title>
+	<meta charset="UTF-8">
 	<!-- AngularJS -->
 	<script src="angular/angular.min.js"></script>
 	<!-- Javascript -->
@@ -9,26 +10,27 @@
 	<script src="js/lolApp-directives.js"></script>
 	<script src="js/apicontroller.js"></script>
 	<script src="js/recentGamesCntrl.js"></script>
-	
-	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div class="basicInfo" ng-controller="apiController as api">
-	<form ng-submit="api.submit()">
-  		<input type="text" ng-model="username.name" placeholder="Summoner's name"></input></br>
- 		<input type="submit" id="submit" value="Submit"></input>
+	<form class="navbar navbar-inverse navbar-fixed-top" id="navbar" ng-submit="api.submit()">
+	<a class="navbar-brand">ᶘ ᵒᴥᵒᶅ</a>
+	<div class="col-xs-4">
+  		<input type="text" ng-model="username.name" class="form-control" placeholder="Summoner's name"></input>
+  	</div>
+  	<div>
+ 		<input type="submit" class="btn btn-default" id="submit" value="Submit"></input>
+ 	</div>
 	</form>
-
+	<div class="content">
 	<summonerdescription></summonerdescription>
 
-	<div class="recentGames">
-		<div class="display" ng-repeat="game in games.games">
-			<h3>{{ game.gameMode }} {{ game.gameType }} {{ game.subType }}</h3>
-			<p><b>Champion: </b>{{ game.championId }}</p>
-			<p><b>Game Date: </b>{{ game.createDate | date }}</p>
-		</div>
+	<summonermatches></summonermatches>
 	</div>
-	
 </div>
 
 

@@ -1,0 +1,25 @@
+#navbar {
+	padding: 20px;
+}
+
+.content {
+	text-align: center;
+	margin-top: 130px;
+}
+
+.recentGames {
+	text-align: left;
+	padding: 50px;
+}
+
+.history {
+	border: 5px solid black;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+.item {
+	padding: 5px;
+}
+
+
